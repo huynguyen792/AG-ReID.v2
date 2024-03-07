@@ -55,7 +55,7 @@ ImageName: **P**0006**T**0214**A**0**C**0**F**1831.jpg
 - **P**0001: (**P**ersonID) unique identity for the main subject in the current video
 - **T**MMDD0/MMDD1: (**T**imestamp) timestamp of the video, indicating Month / Date / AM (MMDD0) or PM (MMDD1)
 - **A**0/1/2: (**A**ltitude) indicates the altitude level - low (0), medium (1), or high (2)
-- **C**0/3: (**C**amera) indicates the type of camera used - UAV - RGB (0) or CCTV - RGB (3)
+- **C**0/2/3: (**C**amera) indicates the type of camera used - UAV - RGB (0) / Wearable - RGB (2) / CCTV - RGB (3)
 - **F**2281: (**F**rame) represents a specific frame from the video
 
 ## Citation

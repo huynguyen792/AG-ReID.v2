@@ -21,14 +21,12 @@ class AG_ReID_v2(BaseImageDataset):
                  verbose=True, **kwargs):
         super(AG_ReID_v2, self).__init__()
         self.dataset_dir = root
-        self.train_dir = osp.join(self.dataset_dir, 'bounding_box_train')
+        self.train_dir = osp.join(self.dataset_dir, 'train_all')
 
-        self.query_dir = osp.join(self.dataset_dir, 'query_all_c0')
-        self.gallery_dir = osp.join(self.dataset_dir, 'bounding_box_test_all_c3')
-        # self.query_dir = osp.join(self.dataset_dir, 'query_all_c3')
-        # self.gallery_dir = osp.join(self.dataset_dir, 'bounding_box_test_all_c0')
+        self.query_dir = osp.join(self.dataset_dir, 'query')
+        self.gallery_dir = osp.join(self.dataset_dir, 'gallery')
 
-        self.qut_attribute_path = osp.join(self.dataset_dir, 'qut_attribute_v4_88_attributes.mat')
+        self.qut_attribute_path = osp.join(self.dataset_dir, 'qut_attribute_v8.mat')
         self.attribute_dict_all = self.generate_attribute_dict(self.qut_attribute_path, "qut_attribute")
 
         self._check_before_run()

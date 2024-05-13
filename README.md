@@ -1,26 +1,29 @@
-# AG-ReID.v2
-
-**Official repository for TIFS2023: AG-ReID.v2: Bridging Aerial and Ground Views for Person Re-identification**
+# AG-ReID.v2: Bridging Aerial and Ground Views for Person Re-identification
 
 ![Sample Images](imgs/ACW-diff.png)
 
-The evaluation code will be added soon.
+Welcome to the official repository for our paper "AG-ReID.v2: Bridging Aerial and Ground Views for Person Re-identification" published in TIFS2023. AG-ReID.v2 is a large-scale, multi-view person re-identification dataset that bridges the gap between aerial and ground perspectives.
 
-## Paper
+## Highlights
 
-- [arXiv](https://arxiv.org/abs/2401.02634)
+- **Large-scale**: AG-ReID.v2 contains 100,502 images of 1,615 identities, making it one of the largest aerial-ground person ReID datasets.
+- **Multi-view**: The dataset is captured from three different platforms - UAV, wearable cameras, and CCTV, providing a comprehensive view of the subjects.
+- **Attribute-rich**: Each identity is annotated with 15 detailed attributes, enabling fine-grained analysis and attribute-based ReID.
+- **Challenging**: AG-ReID.v2 presents real-world challenges such as occlusion, viewpoint variations, and background clutter.
 
-## News
+## Download
 
-- **2023-03-07**: The AG-ReID.v2 dataset is now available for [download](https://drive.google.com/drive/folders/16r7G_CuUqfWG6_UCT7goIGRMqJird6vK?usp=share_link).
+The AG-ReID.v2 dataset is now available for download:
 
-## About the Dataset
+[Download AG-ReID.v2 Dataset](https://drive.google.com/drive/folders/16r7G_CuUqfWG6_UCT7goIGRMqJird6vK?usp=share_link)
 
-We have annotated 15 attributes for the [AG-ReID.v2 dataset](https://drive.google.com/drive/folders/16r7G_CuUqfWG6_UCT7goIGRMqJird6vK?usp=share_link). The dataset comprises 807 distinct identities for training and another 808 for testing. These attributes are annotated at the identity level, which means that the file contains 15 x 807 attributes for training and 15 x 808 attributes for testing. In this context, the label "image_index" represents the identity. You can find these annotations in the file named qut_attribute_v8.mat.
+## Dataset Overview
 
-The 15 attributes include:
+AG-ReID.v2 comprises 807 identities for training and 808 for testing. The dataset is annotated with 15 attributes at the identity level. You can find these annotations in the file `qut_attribute_v8.mat`.
 
-| Attribute | Representation in File | Label |
+### Attributes
+
+| Attribute | Representation in File | Labels |
 | :-------: | :-------------------: | :---: |
 | Gender | gender | male(0), female(1), unknown(2) |
 | Ages | age | 0-11(0), 12-17(1), 18-24(2), 25-34(3), 35-44(4), 45-54(5), 55-64(6), >65(7), Unknown(8) |
@@ -38,28 +41,102 @@ The 15 attributes include:
 | Feet | feet | Sport_shoe(0), Classic_shoe(1), High_heels(2), Boots(3), Sandals(4), Nothing(5), Unknown(6) |
 | Accessories | bag | Bag(0), Backpack(1), Handbag(2), Rolling_bag(3), Umbrella(4), Sportif_bag(5), Market_bag(6), Nothing(7), Unknown(8) |
 
-Note that in the .mat file, the original 15 attributes have been transformed into 88 binary-encoded attributes. 
+*Note: In the .mat file, the original 15 attributes have been transformed into 88 binary-encoded attributes.*
 
-## Sample
+### Image Annotations
 
-![Sample Image](imgs/sample_image.jpg)
-
-## Dataset Download
-
-The dataset is available for [Download](https://drive.google.com/drive/folders/16r7G_CuUqfWG6_UCT7goIGRMqJird6vK?usp=share_link) now!
-
-## Annotations
-
+Image filenames in AG-ReID.v2 follow a specific format that encodes key information:
 ImageName: **P**0006**T**0214**A**0**C**0**F**1831.jpg
 
 - **P**0001: (**P**ersonID) unique identity for the main subject in the current video
 - **T**MMDD0/MMDD1: (**T**imestamp) timestamp of the video, indicating Month / Date / AM (MMDD0) or PM (MMDD1)
-- **A**0/1/2: (**A**ltitude) indicates the altitude level - low (0), medium (1), or high (2)
+- **A**0/1/2: (**A**ltitude) indicates the altitude level - low (0), medium (1), or high (2)  
 - **C**0/2/3: (**C**amera) indicates the type of camera used - UAV - RGB (0) / Wearable - RGB (2) / CCTV - RGB (3)
 - **F**2281: (**F**rame) represents a specific frame from the video
 
+## Camera Specifications
+
+| Device | Brand | Model | Resolution | FPS | Altitude |
+|---|---|---|---|---|---|
+| CCTV | Bosch | N/A | 800 x 600 | 30 | ~ 3m |
+| Wearable | Vuzix | M4000 | 4K | 30 | ~ 1.5m |
+| UAV | DJI | XT2 | 3840 x 2160 | 30 | ~ 15-45m |
+
+## Data Collection Area
+
+The dataset was collected in a diverse urban environment:
+<div style="display: flex; justify-content: center;">
+<img src="imgs/data_collection_area.png" width="80%"/>
+</div>
+
+## Distribution of Body Heights and UAV Altitudes
+
+AG-ReID.v2 covers a wide range of subject heights and UAV altitudes:
+
+<div style="display: flex; justify-content: center;">
+  <div style="flex: 3; text-align: center;">
+    <img src="imgs/height_distribution.png" width="100%"/>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="imgs/images_distribution.png" width="90%"/>
+  </div>
+</div>
+
+## Key Challenges
+
+AG-ReID.v2 presents several real-world challenges for person re-identification algorithms:
+
+<div style="display: flex; justify-content: center;">
+<img src="imgs/dataset_challenges.png" width="90%"/>
+</div>
+
+1. **Viewpoint Variations**: Subjects are captured from multiple viewpoints, including aerial and ground perspectives.
+2. **Occlusions**: Partial occlusions are common due to objects in the scene or other people.  
+3. **Background Clutter**: Complex and varying backgrounds can confuse ReID models.
+4. **Altitude Variations**: UAV captures subjects from different altitudes, leading to scale variations.
+
+## Comparison with Other ReID Datasets
+
+AG-ReID.v2 stands out among existing person ReID datasets in several aspects:
+
+| Attributes | Market-1501 | DukeMTMC-reID | PRAI-1581 | UAV-Human | AG-ReID.v1 | AG-ReID.v2 (ours) |
+| :-------: | :---: | :---: | :---: | :---: | :---: | :---: |
+| \# IDs | 1,501 | 1,404 | 1,581 | 1,144 | 388 | **1,615** |
+| \# Images | 32,668 | 36,411 | 39,461 | 41,290 | 21,983 | **100,502** |
+| \# Attributes | ✗ | ✗ | ✗ | 7 | 15 | 15 |
+| Backgrounds | ✗ | ✗ | ✗ | ✓ | ✓ | ✓ |
+| Occlusion | ✗ | ✗ | ✓ | ✓ | ✓ | ✓ |
+| Camera Views | fixed | fixed | mobile | mobile | mixed | mixed | 
+| Platforms | CCTV | CCTV | UAV | UAV | Dual | **Triple** |
+| Altitude | $<10m$ | $<10m$ | $20\sim60m$ | $2\sim8m$ | $15\sim45m$ | $15\sim45m$ |
+| \# UAVs | 0 | 0 | 2 | 1 | 1 | 1 |
+
+AG-ReID.v2 leads in the number of identities, images, and platforms compared to other ReID datasets. 
+
+## Comparative Analysis of Attributes
+
+| Attributes | Market-1501 | DukeMTMC-reID | P-DESTRE | UAV-Human | AG-ReID.v1 | AG-ReID.v2 (ours) |
+| :-------: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Gender | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Age | ✗ | ✗ | ✓ | ✗ | ✓ | ✓ | 
+| Height | ✗ | ✗ | ✓ | ✗ | ✓ | ✓ |
+| Body Volume | ✗ | ✗ | ✓ | ✗ | ✓ | ✓ |
+| Ethnicity | ✗ | ✗ | ✓ | ✗ | ✓ | ✓ |
+| Hair Color | ✗ | ✗ | ✓ | ✗ | ✓ | ✓ |
+| Hairstyle | ✗ | ✗ | ✓ | ✗ | ✓ | ✓ |
+| Beard | ✗ | ✗ | ✗ | ✗ | ✓ | ✓ |
+| Moustache | ✗ | ✗ | ✗ | ✗ | ✓ | ✓ |
+| Glasses | ✗ | ✗ | ✓ | ✗ | ✓ | ✓ |
+| Head Accessories | ✗ | ✗ | ✓ | ✗ | ✓ | ✓ |
+| Upper Body Clothing | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ |
+| Lower Body Clothing | ✓ | ✓ | ✗ | ✓ | ✓ | ✓ |  
+| Feet | ✗ | ✗ | ✓ | ✗ | ✓ | ✓ |
+| Accessories | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+
 ## Citation
-```
+If you find AG-ReID.v2 useful in your research, please consider citing our paper:
+
+```bibtex
 @misc{nguyen2024agreidv2,
       title={AG-ReID.v2: Bridging Aerial and Ground Views for Person Re-identification}, 
       author={Huy Nguyen and Kien Nguyen and Sridha Sridharan and Clinton Fookes},
@@ -68,7 +145,3 @@ ImageName: **P**0006**T**0214**A**0**C**0**F**1831.jpg
       archivePrefix={arXiv},
       primaryClass={cs.CV}
 }
-```
-## Contact
-
-`thanhnhathuy.nguyen@hdr.qut.edu.au`

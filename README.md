@@ -69,18 +69,12 @@ The dataset was collected in a diverse urban environment:
 <img src="imgs/data_collection_area.png" width="80%"/>
 </div>
 
-## Distribution of Body Heights and UAV Altitudes
-
-AG-ReID.v2 covers a wide range of subject heights and UAV altitudes:
+## Distribution of Body Heights
 
 <div style="display: flex; justify-content: center;">
-  <div style="flex: 3; text-align: center;">
-    <img src="imgs/height_distribution.png" width="100%"/>
-  </div>
-  <div style="flex: 1; text-align: center;">
-    <img src="imgs/images_distribution.png" width="90%"/>
-  </div>
+  <img src="imgs/height_distribution.png" width="80%"/>
 </div>
+
 
 ## Key Challenges
 

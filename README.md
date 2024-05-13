@@ -131,11 +131,13 @@ AG-ReID.v2 leads in the number of identities, images, and platforms compared to 
 If you find AG-ReID.v2 useful in your research, please consider citing our paper:
 
 ```bibtex
-@misc{nguyen2024agreidv2,
-      title={AG-ReID.v2: Bridging Aerial and Ground Views for Person Re-identification}, 
-      author={Huy Nguyen and Kien Nguyen and Sridha Sridharan and Clinton Fookes},
-      year={2024},
-      eprint={2401.02634},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
+@ARTICLE{10403853,
+  author={Nguyen, Huy and Nguyen, Kien and Sridharan, Sridha and Fookes, Clinton},
+  journal={IEEE Transactions on Information Forensics and Security}, 
+  title={AG-ReID.v2: Bridging Aerial and Ground Views for Person Re-Identification}, 
+  year={2024},
+  volume={19},
+  number={},
+  pages={2896-2908},
+  keywords={Cameras;Autonomous aerial vehicles;Image resolution;Computer architecture;Smart glasses;Meters;Drones;Person re-identification;aerial-ground imagery;UAV;CCTV;smart glasses;video surveillance;attribute-guided;three-stream network},
+  doi={10.1109/TIFS.2024.3353078}}
